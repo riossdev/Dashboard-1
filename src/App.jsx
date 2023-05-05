@@ -1,9 +1,358 @@
-function App() { 
+import { useState } from "react";
+
+import {
+  RiSearchLine,
+  RiNotification3Line,
+  RiArrowDownSLine,
+  RiCheckboxBlankCircleFill,
+  RiCheckDoubleFill,
+  RiMessage2Line,
+  RiMenuFill
+} from "react-icons/ri";
+
+function App() {
+
+  const [showMenu, setShowMenu] = useState(false)
+
   return (
-    <div className="text-center bg-indigo-600 text-4xl text-white font-extrabold py-4">
-      <h1>Hello Word!</h1>
+    <div className="min-h-screen">
+      {/*Header */}
+      <header className="w-full h-[8vh] flex items-center justify-between px-8 bg-[#22222A]">
+        <div>
+          <img
+            src="/src/assets/Logo_Sandiego.png"
+            alt=""
+            className="w-50 h-10 object-cover"
+          />
+        </div>
+        <div>
+          <form className="hidden md:block">
+            <div className="relative">
+              <input
+                type="text"
+                className="bg-[#050505] outline-none py-0 pl-4 pr-8 rounded text-gray-300"
+                placeholder="Search"
+              />
+              <RiSearchLine className="absolute right-2 top-1 text-gray-300" />
+            </div>
+          </form>
+        </div>
+        <div className="flex items-center gap-4">
+          <div className="relative">
+            <RiNotification3Line className="text-gray-300" />
+            <span className="absolute text-white text-[10px] bg-purple-600 rounded-full font-bold  -top-2 -right-2 py-[2px]- px-[4px]">
+              2
+            </span>
+          </div>
+          {/* User */}
+          <div className="flex items-center gap-2">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
+              alt=""
+              className="w-6 h-6 object-cover rounded-full ring-2 ring-white"
+            />
+            <RiArrowDownSLine className="text-gray-300" />
+          </div>
+        </div>
+      </header>
+      {/*Content */}
+      <main className="h-[92vh] grid grid-cols-1  md:grid-cols-8">
+        {/* menu mobile */}
+        <button className="fixed">
+          <RiMenuFill/>
+        </button>
+        <section className="col-span-2 bg-[#22222A] p-8 overflow-scroll fixed -left-full lg:static">
+          {/* Title and Search */}
+          <div>
+            <h1 className="text-white text-3xl mb-4">Messages</h1>
+            <form className="hidden md:block mb-4">
+              <div className="relative">
+                <input
+                  type="text"
+                  className="bg-[#050505] w-full p-2 outline-none py-2 pl-4 pr-8 rounded text-gray-300"
+                  placeholder="Search"
+                />
+                <RiSearchLine className="absolute right-2 top-3 text-gray-300" />
+              </div>
+            </form>
+          </div>
+          {/* Users */}
+          <div>
+            {/*User*/}
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+                <RiCheckboxBlankCircleFill className="absolute text-green-500 -right-0 top-7 ring ring-white rounded-full" />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Killian James</h3>
+                  <p className="text-green-300 text-xs">Typing...</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs">4:30 PM</h3>
+                  <span className="bg-red-600 text-white rounded-full -py-1 my-2 px-1 text-xs float-right">2</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/foto-gratis/mujer-pensativa-alegre-mujer-tocando-mejilla_74855-2652.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Design Team</h3>
+                  <p className="text-gray-500 text-xs">Hello! Everyone</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs mb-2">9:36 AM</h3>
+                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/foto-gratis/retrato-usuario-emocionado-alegre-tableta-que-lleva-lentes_1262-18272.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Ahmed Medi</h3>
+                  <p className="text-gray-500 text-xs">Wow really Cool 🔥</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
+                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 my-8 ">
+              <RiMessage2Line className="text-gray-300"/>
+              <p className="text-gray-300">All messages</p>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/foto-gratis/retrato-estilo-vida-mujer-morena-feliz-vestido-elegante-alegre-joven-divirtiendose-disfrutando-vacaciones-verano-fines-semana_273443-1585.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Claudia Maudi</h3>
+                  <p className="text-green-300 text-xs">Typing...</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs mb-2">4:30 PM</h3>
+                 
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/foto-gratis/retrato-mujer-mayor-madura-amable-generosa-elegante-camisa-cogidos-mano-sobre-su-pecho-sintiendose-agradecida-gran-regalo-su-cumpleanos-anciana-expresando-aprecio_343059-2871.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+                <RiCheckboxBlankCircleFill className="absolute text-green-500 -right-0 top-7 ring ring-white rounded-full" />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Novita</h3>
+                  <p className="text-gray-500 text-xs">yeah, nice, design</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs">4:30 PM</h3>
+                  <span className="bg-red-600 text-white rounded-full -py-1 my-2 px-1 text-xs float-right">2</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/foto-gratis/persona-mayor-gesticular-aislado_23-2149193760.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Mille Nose</h3>
+                  <p className="text-gray-500 text-xs">Awesome 🔥</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs">4:30 PM</h3>
+                  <span className="bg-red-600 text-white rounded-full -py-1 my-2 px-1 text-xs float-right">1</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/foto-gratis/hombre-muestra-promocion-presenta-nuevo-producto-expresion-segura-si-mismo-usa-gafas-jersey-informal-chaleco-muestra-espacio-blanco-gris_273609-54440.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Ahmed Medi</h3>
+                  <p className="text-gray-500 text-xs">Wow really Cool 🔥</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
+                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/fotos-premium/retrato-hombre-negocios-exitoso-seguro-traje-gris-camisa-azul-sonriendo-complacido-mirando-izquierda-pie-sobre-fondo-blanco_1258-33285.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Ahmed Medi</h3>
+                  <p className="text-gray-500 text-xs">Wow really Cool 🔥</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
+                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/foto-gratis/retrato-usuario-emocionado-alegre-tableta-que-lleva-lentes_1262-18272.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Ahmed Medi</h3>
+                  <p className="text-gray-500 text-xs">Wow really Cool 🔥</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
+                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/psd-gratis/retrato-mujer-senior-sonriendo_23-2150115987.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Ahmed Medi</h3>
+                  <p className="text-gray-500 text-xs">Wow really Cool 🔥</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
+                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/foto-gratis/apuesto-hombre-senior-exitoso-traje-senalando-dedo-sonriendo-descarado_176420-31768.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Ahmed Medi</h3>
+                  <p className="text-gray-500 text-xs">Wow really Cool 🔥</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
+                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/foto-gratis/apuesto-hombre-negocios-vestido-traje-mostrando-numero-cinco-sonriendo-confiado-pie-sobre-fondo-blanco_141793-54181.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Ahmed Medi</h3>
+                  <p className="text-gray-500 text-xs">Wow really Cool 🔥</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
+                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center cursor-pointer mb-4">
+              <div className="relative">
+                <img
+                  src="https://img.freepik.com/foto-gratis/hombre-mantiene-brazos-cruzados-ve-expresion-alegre-segura-si-mismo-viste-camisa-formal-gafas-corregir-vision-pared-azul_273609-54788.jpg"
+                  alt=""
+                  className="w-12 h-10 object-cover rounded-full"
+                />
+              </div>
+              <div className="w-full flex justify-between px-2">
+                <div>
+                  <h3 className="text-gray-300 font-semibold">Ahmed Medi</h3>
+                  <p className="text-gray-500 text-xs">Wow really Cool 🔥</p>
+                </div>
+                <div>
+                  <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
+                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </section>
+        <section className=" col-span-4">2</section>
+        <section className=" col-span-2">3</section>
+      </main>
     </div>
-    
-  )
+  );
 }
-export default App
+export default App;
