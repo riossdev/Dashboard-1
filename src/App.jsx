@@ -7,20 +7,22 @@ import {
   RiCheckboxBlankCircleFill,
   RiCheckDoubleFill,
   RiMessage2Line,
-  RiMenuFill
+  RiMenuFill,
+  RiAddLine,
 } from "react-icons/ri";
 
 function App() {
-
-  const [showMenu, setShowMenu] = useState(false)
-
+  const [showMenu, setShowMenu] = useState(false);
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
   return (
     <div className="min-h-screen">
       {/*Header */}
       <header className="w-full h-[8vh] flex items-center justify-between px-8 bg-[#22222A]">
         <div>
           <img
-            src="/src/assets/Logo_Sandiego.png"
+            src="/src/assets/logo.png"
             alt=""
             className="w-50 h-10 object-cover"
           />
@@ -56,12 +58,19 @@ function App() {
         </div>
       </header>
       {/*Content */}
-      <main className="h-[92vh] grid grid-cols-1  md:grid-cols-8">
+      <main className="h-[92vh] grid grid-cols-1  lg:grid-cols-8">
         {/* menu mobile */}
-        <button className="fixed">
-          <RiMenuFill/>
+        <button
+          onClick={toggleMenu}
+          className="fixed bottom-4 right-4 bg-[#22222A] p-3 rounded-full text-white "
+        >
+          <RiMenuFill />
         </button>
-        <section className="col-span-2 bg-[#22222A] p-8 overflow-scroll fixed -left-full lg:static">
+        <section
+          className={`col-span-2 bg-[#22222A] p-8 overflow-scroll overflow-x-hidden  transition-all top-0 w-[80%] h-full md:w-[50%] lg:w-full fixed ${
+            showMenu ? "-left-0" : "-left-full"
+          } lg:static`}
+        >
           {/* Title and Search */}
           <div>
             <h1 className="text-white text-3xl mb-4">Messages</h1>
@@ -95,7 +104,9 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs">4:30 PM</h3>
-                  <span className="bg-red-600 text-white rounded-full -py-1 my-2 px-1 text-xs float-right">2</span>
+                  <span className="bg-red-600 text-white rounded-full -py-1 my-2 px-1 text-xs float-right">
+                    2
+                  </span>
                 </div>
               </div>
             </div>
@@ -115,7 +126,7 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs mb-2">9:36 AM</h3>
-                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                  <RiCheckDoubleFill className="text-blue-400 float-right" />
                 </div>
               </div>
             </div>
@@ -135,13 +146,13 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
-                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                  <RiCheckDoubleFill className="text-blue-400 float-right" />
                 </div>
               </div>
             </div>
 
             <div className="flex items-center gap-2 my-8 ">
-              <RiMessage2Line className="text-gray-300"/>
+              <RiMessage2Line className="text-gray-300" />
               <p className="text-gray-300">All messages</p>
             </div>
 
@@ -160,7 +171,6 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs mb-2">4:30 PM</h3>
-                 
                 </div>
               </div>
             </div>
@@ -181,7 +191,9 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs">4:30 PM</h3>
-                  <span className="bg-red-600 text-white rounded-full -py-1 my-2 px-1 text-xs float-right">2</span>
+                  <span className="bg-red-600 text-white rounded-full -py-1 my-2 px-1 text-xs float-right">
+                    2
+                  </span>
                 </div>
               </div>
             </div>
@@ -201,7 +213,9 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs">4:30 PM</h3>
-                  <span className="bg-red-600 text-white rounded-full -py-1 my-2 px-1 text-xs float-right">1</span>
+                  <span className="bg-red-600 text-white rounded-full -py-1 my-2 px-1 text-xs float-right">
+                    1
+                  </span>
                 </div>
               </div>
             </div>
@@ -221,7 +235,7 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
-                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                  <RiCheckDoubleFill className="text-blue-400 float-right" />
                 </div>
               </div>
             </div>
@@ -241,7 +255,7 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
-                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                  <RiCheckDoubleFill className="text-blue-400 float-right" />
                 </div>
               </div>
             </div>
@@ -261,7 +275,7 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
-                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                  <RiCheckDoubleFill className="text-blue-400 float-right" />
                 </div>
               </div>
             </div>
@@ -281,7 +295,7 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
-                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                  <RiCheckDoubleFill className="text-blue-400 float-right" />
                 </div>
               </div>
             </div>
@@ -301,7 +315,7 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
-                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                  <RiCheckDoubleFill className="text-blue-400 float-right" />
                 </div>
               </div>
             </div>
@@ -321,7 +335,7 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
-                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                  <RiCheckDoubleFill className="text-blue-400 float-right" />
                 </div>
               </div>
             </div>
@@ -341,15 +355,58 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-xs mb-2">1:15 AM</h3>
-                  <RiCheckDoubleFill className="text-blue-400 float-right"/>
+                  <RiCheckDoubleFill className="text-blue-400 float-right" />
                 </div>
               </div>
             </div>
-
-
           </div>
         </section>
-        <section className=" col-span-4">2</section>
+
+        <section className="bg-[#1E1F24] col-span-4 p-8 relative ">
+          {/* header Group */}
+          <div className="absolute w-full left-0 top-0  flex items-center gap-8 p-8">
+            <div className="">
+              <img
+                src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg"
+                alt=""
+                className="w-16 h-16 object-cover rounded-full"
+              />
+            </div>
+            <div className="flex-1 flex justify-between items-center ">
+              <div>
+                <h1 className="text-3xl text-gray-300">Killian James</h1>
+                <p className="text-gray-500">60 menbers, 10 online</p>
+              </div>
+              <div className="flex justify-center items-center gap-4">
+                <div className="flex justify-center items-center">
+                  <img
+                    src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg"
+                    alt=""
+                    className="w-8 h-8 object-cover rounded-full"
+                  />
+                  <img
+                    src="https://img.freepik.com/foto-gratis/mujer-pensativa-alegre-mujer-tocando-mejilla_74855-2652.jpg"
+                    alt=""
+                    className="w-8 h-8 object-cover rounded-full"
+                  />
+                  <img
+                    src="https://img.freepik.com/foto-gratis/hombre-muestra-promocion-presenta-nuevo-producto-expresion-segura-si-mismo-usa-gafas-jersey-informal-chaleco-muestra-espacio-blanco-gris_273609-54440.jpg"
+                    alt=""
+                    className="w-8 h-8 object-cover rounded-full"
+                  />
+                </div>
+                <div>
+                  <button className="bg-[#222222] p-3 text-gray-300 rounded-full">
+                    <RiAddLine />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute w-full bottom-0">
+              hola
+          </div>
+        </section>
         <section className=" col-span-2">3</section>
       </main>
     </div>
