@@ -9,7 +9,13 @@ import {
   RiMessage2Line,
   RiMenuFill,
   RiAddLine,
+  RiImage2Line,
+  RiEmotionHappyLine,
+  RiSendPlaneLine,
+  RiMapPinLine,
+  RiMore2Fill,
 } from "react-icons/ri";
+import { BiMicrophone } from "react-icons/bi";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -362,9 +368,9 @@ function App() {
           </div>
         </section>
 
-        <section className="bg-[#1E1F24] col-span-4 p-8 relative ">
+        <section className="bg-[#1E1F24] col-span-4  relative ">
           {/* header Group */}
-          <div className="absolute w-full left-0 top-0  flex items-center gap-8 p-8">
+          <div className="absolute w-full left-0 top-0  flex items-center gap-8 p-8 border-b border-gray-800">
             <div className="">
               <img
                 src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg"
@@ -403,8 +409,108 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="absolute w-full bottom-0">
-              hola
+          {/* send messages chat */}
+          <div className="bg-[#22222A] absolute w-full bottom-0 p-8 ">
+            <form className="relative">
+              <input
+                type="text"
+                className="bg-[#1E1F24] py-2 pl-10 pr-28 w-full rounded-full outline-none text-gray-300"
+              />
+              <BiMicrophone className="absolute text-gray-300 left-4 top-3 text-xl hover:cursor-pointer" />
+              {/* icon message */}
+              <div className="flex justify-end gap-2 items-center text-xl text-gray-300 absolute right-4 top-3">
+                <RiImage2Line className="hover:cursor-pointer" />
+                <RiEmotionHappyLine className="hover:cursor-pointer" />
+                <RiSendPlaneLine className="hover:cursor-pointer" />
+                <RiMapPinLine className="hover:cursor-pointer" />
+              </div>
+            </form>
+          </div>
+          {/* content messages */}
+          <div className="mt-32 h-full p-8">
+            <div className="flex justify-start gap-4 mb-4">
+              <img
+                src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg"
+                alt=""
+                className="w-8 h-8 object-cover rounded-full"
+              />
+              <div>
+                <h4 className="text-gray-300  font-semibold ">
+                  Killian James
+                  <span className="font-normal text-sm text-gray-500 px-8">
+                    10:12 AM
+                  </span>
+                </h4>
+                <div className="flex items-center  gap-2 ">
+                  <p className="bg-[#292A30] mt-2 p-2 rounded-tr-lg rounded-bl-lg rounded-br-lg  text-gray-200 ">
+                    Hi, Are you still Web Designer
+                  </p>
+                  <button className="text-gray-300  mt-2">
+                    <RiMore2Fill />
+                  </button>
+                </div>
+                <div className="flex items-center justify-evenly gap-2 ">
+                  <p className="bg-[#292a30] mt-2 p-2 rounded-tr-lg rounded-bl-lg rounded-br-lg  text-gray-200 ">
+                    Would love to see some desing 🙂
+                  </p>
+                  <button className="text-gray-300  mt-2">
+                    <RiMore2Fill />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="relative my-8">
+              <p className="text-gray-600 text-xs text-center  bg-[#1E1F24] py-1 px-4 absolute -top-[14px] ml-[50%] -translate-x-[50%] ">
+                Today, March 24
+              </p>
+              <hr className="border-gray-600" />
+            </div>
+            <div className="flex justify-start gap-4 mb-4">
+              <img
+                src="https://img.freepik.com/foto-gratis/retrato-mujer-mayor-madura-amable-generosa-elegante-camisa-cogidos-mano-sobre-su-pecho-sintiendose-agradecida-gran-regalo-su-cumpleanos-anciana-expresando-aprecio_343059-2871.jpg"
+                alt=""
+                className="w-8 h-8 object-cover rounded-full"
+              />
+              <div>
+                <h4 className="text-gray-300  font-semibold ">
+                  Killian James
+                  <span className="font-normal text-sm text-gray-500 px-8">
+                    10:30 AM
+                  </span>
+                </h4>
+                <div className="flex items-center gap-2 mb-2 ">
+                  <p className="bg-[#292A30] mt-2 p-2 rounded-tr-lg rounded-bl-lg rounded-br-lg  text-gray-200 ">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laudantium dolor voluptatum nobis quod similique aspernatur
+                    totam sint libero eaque eos quia
+                  </p>
+                  <button className="text-gray-300  mt-2">
+                    <RiMore2Fill />
+                  </button>
+                </div>
+                <div className="flex items-center  gap-2 mb-2 ">
+                  <p className="bg-[#292a30] mt-2 p-2 rounded-tr-lg rounded-bl-lg rounded-br-lg  text-gray-200 ">
+                    Would love to see some desing 🙂
+                  </p>
+                  <button className="text-gray-300  mt-2">
+                    <RiMore2Fill />
+                  </button>
+                </div>
+                <div className="flex items-center  gap-2 mb-2 ">
+                  <img
+                    src="https://img.freepik.com/foto-gratis/joven-familia-su-pequeno-hijo-casa_1303-20993.jpg"
+                    className="w-32 h-40 object-cover rounded-lg "
+                  />
+                  <img
+                    src="https://img.freepik.com/foto-gratis/familia-joven-sus-hijos-casa-divirtiendose_1303-20999.jpg"
+                    className="w-32 h-40 object-cover rounded-lg "
+                  />
+                  <button className="text-gray-300  mt-2">
+                    <RiMore2Fill />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section className=" col-span-2">3</section>
@@ -413,3 +519,4 @@ function App() {
   );
 }
 export default App;
+//
