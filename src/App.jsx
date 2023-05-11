@@ -410,7 +410,7 @@ function App() {
             </div>
           </div>
           {/* send messages chat */}
-          <div className="bg-[#22222A] absolute w-full bottom-0 p-8 ">
+          <div className="bg-[#22222A] absolute w-full bottom-0 p-6 ">
             <form className="relative">
               <input
                 type="text"
@@ -427,7 +427,7 @@ function App() {
             </form>
           </div>
           {/* content messages */}
-          <div className="mt-32 h-full p-8">
+          <div className="mt-32  p-8 ">
             <div className="flex justify-start gap-4 mb-4">
               <img
                 src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg"
@@ -473,7 +473,7 @@ function App() {
               />
               <div>
                 <h4 className="text-gray-300  font-semibold ">
-                  Killian James
+                  Novita
                   <span className="font-normal text-sm text-gray-500 px-8">
                     10:30 AM
                   </span>
@@ -511,7 +511,45 @@ function App() {
                 </div>
               </div>
             </div>
+
+
+            <div className="flex justify-end gap-4 mb-4 ">
+              <img
+                src="https://img.freepik.com/foto-gratis/hombre-muestra-promocion-presenta-nuevo-producto-expresion-segura-si-mismo-usa-gafas-jersey-informal-chaleco-muestra-espacio-blanco-gris_273609-54440.jpg"
+                alt=""
+                className="w-8 h-8 object-cover rounded-full order-1"
+              />
+              <div>
+                <h4 className="text-gray-300  font-semibolds text-right">
+                  <span className="font-normal text-sm text-gray-500 px-8 ">
+                    10:12 AM
+                  </span>
+                  Ahmed Medi
+                </h4>
+                <div className="flex items-center justify-end  gap-2 ">
+                  <p className="bg-purple-500 mt-2 p-2 rounded-tl-lg rounded-bl-lg rounded-br-lg  text-gray-200 order-1 ">
+                    Hi, Are you still Web Designer
+                  </p>
+                  <button className="text-gray-300  mt-2">
+                    <RiMore2Fill />
+                  </button>
+                </div>
+                <div className="flex items-center justify-evenly gap-2 ">
+                  <p className="bg-purple-500 mt-2 p-2 rounded-tl-lg rounded-bl-lg rounded-br-lg  text-gray-200  order-1">
+                    Would love to see some desing 🙂
+                  </p>
+                  <button className="text-gray-300  mt-2">
+                    <RiMore2Fill />
+                  </button>
+                </div>
+              </div>
+            </div>
+            
           </div>
+
+
+
+          
         </section>
         <section className=" col-span-2">3</section>
       </main>
