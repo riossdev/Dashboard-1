@@ -368,7 +368,7 @@ function App() {
           </div>
         </section>
 
-        <section className="bg-[#1E1F24] col-span-4  relative ">
+        <section className="bg-[#1E1F24] col-span-4   relative ">
           {/* header Group */}
           <div className="absolute w-full left-0 top-0  flex items-center gap-8 p-8 border-b border-gray-800">
             <div className="">
@@ -381,7 +381,7 @@ function App() {
             <div className="flex-1 flex justify-between items-center ">
               <div>
                 <h1 className="text-3xl text-gray-300">Killian James</h1>
-                <p className="text-gray-500">60 menbers, 10 online</p>
+                <p className="text-gray-500">60 members, 10 online</p>
               </div>
               <div className="flex justify-center items-center gap-4">
                 <div className="flex justify-center items-center">
@@ -410,7 +410,7 @@ function App() {
             </div>
           </div>
           {/* send messages chat */}
-          <div className="bg-[#22222A] absolute w-full bottom-0 p-6 ">
+          <div className="bg-[#22222A] absolute w-full bottom-0 p-6 left-0">
             <form className="relative">
               <input
                 type="text"
@@ -427,8 +427,8 @@ function App() {
             </form>
           </div>
           {/* content messages */}
-          <div className="mt-32  p-8 ">
-            <div className="flex justify-start gap-4 mb-4">
+          <div className="mt-32 absolute overflow-y-scroll  px-8 max-h-[calc(100%-200px)]">
+            <div className="flex gap-4 ">
               <img
                 src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg"
                 alt=""
