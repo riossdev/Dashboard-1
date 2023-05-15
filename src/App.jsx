@@ -14,6 +14,10 @@ import {
   RiSendPlaneLine,
   RiMapPinLine,
   RiMore2Fill,
+  RiInstagramLine,
+  RiFacebookCircleFill,
+  RiTwitterFill,
+  RiTwitchFill,
 } from "react-icons/ri";
 import { BiMicrophone } from "react-icons/bi";
 
@@ -68,12 +72,12 @@ function App() {
         {/* menu mobile */}
         <button
           onClick={toggleMenu}
-          className="fixed bottom-4 right-4 bg-[#22222A] p-3 rounded-full text-white "
+          className="block lg:hidden fixed bottom-24 right-4 bg-purple-600 p-3 rounded-full text-white z-50 "
         >
           <RiMenuFill />
         </button>
         <section
-          className={`col-span-2 bg-[#22222A] p-8 overflow-scroll overflow-x-hidden  transition-all top-0 w-[80%] h-full md:w-[50%] lg:w-full fixed ${
+          className={`col-span-2 bg-[#22222A] p-8 overflow-scroll overflow-x-hidden  transition-all top-0 w-[80%] h-full md:w-[50%] lg:w-full z-50 fixed ${
             showMenu ? "-left-0" : "-left-full"
           } lg:static`}
         >
@@ -94,7 +98,7 @@ function App() {
           {/* Users */}
           <div>
             {/*User*/}
-            <div className="w-full flex items-center cursor-pointer mb-4">
+            <div className="w-full flex items-center cursor-pointer mb-8 ring-8 ring-[#1E1F24] bg-[#1E1F24] rounded">
               <div className="relative">
                 <img
                   src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg"
@@ -368,9 +372,9 @@ function App() {
           </div>
         </section>
 
-        <section className="bg-[#1E1F24] col-span-4   relative ">
+        <section className="bg-[#1E1F24] col-span-4 relative ">
           {/* header Group */}
-          <div className="absolute w-full left-0 top-0  flex items-center gap-8 p-8 border-b border-gray-800">
+          <div className="absolute w-full left-0 top-0 flex items-center gap-8 p-4 md:p-8 border-b border-gray-800">
             <div className="">
               <img
                 src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg"
@@ -378,7 +382,7 @@ function App() {
                 className="w-16 h-16 object-cover rounded-full"
               />
             </div>
-            <div className="flex-1 flex justify-between items-center ">
+            <div className="flex-1 flex flex-col md:flex-row justify-between items-center ">
               <div>
                 <h1 className="text-3xl text-gray-300">Killian James</h1>
                 <p className="text-gray-500">60 members, 10 online</p>
@@ -427,7 +431,7 @@ function App() {
             </form>
           </div>
           {/* content messages */}
-          <div className="mt-32 absolute overflow-y-scroll  px-8 max-h-[calc(100%-200px)]">
+          <div className="mt-32 absolute overflow-y-scroll  px-8 max-h-[calc(100%-220px)]">
             <div className="flex gap-4 ">
               <img
                 src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg"
@@ -511,8 +515,6 @@ function App() {
                 </div>
               </div>
             </div>
-
-
             <div className="flex justify-end gap-4 mb-4 ">
               <img
                 src="https://img.freepik.com/foto-gratis/hombre-muestra-promocion-presenta-nuevo-producto-expresion-segura-si-mismo-usa-gafas-jersey-informal-chaleco-muestra-espacio-blanco-gris_273609-54440.jpg"
@@ -544,14 +546,66 @@ function App() {
                 </div>
               </div>
             </div>
-            
+          </div>
+        </section>
+
+        <section className="hidden lg:block col-span-2 bg-[#22222A] ">
+          {/* img */}
+          <div className="flex justify-center items-center gap-2 flex-col  ">
+            <img
+              src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg"
+              alt=""
+              className="w-24 h-24 object-cover rounded-full"
+            />
+            <div>
+              <h2 className="text-gray-400 text-xl">Killian James</h2>
+              <p className="text-gray-500 text-center">FullStack</p>
+            </div>
           </div>
 
+          <div className="p-8 mb-4">
+            {/* Social Media */}
+            <a href="#" className="flex justify-cente gap-4 mb-4 p-4 rounded hover:bg-[#292a30] transition-colors">
+              <div className="bg-[#1E1F24] p-4 text-xl rounded-lg text-purple-600">
+                <RiInstagramLine />
+              </div>
+              <div>
+                <span className="text-gray-300 font-semi">@Riossdev</span>
+                <p className="text-gray-500">150,000 followers</p>
+              </div>
+            </a>
 
+            <a href="#" className="flex justify-cente gap-4 mb-4 p-4 rounded hover:bg-[#292a30] transition-colors">
+              <div className="bg-[#1E1F24] p-4 text-xl rounded-lg text-purple-600">
+                <RiFacebookCircleFill />
+              </div>
+              <div>
+                <span className="text-gray-300 font-semi">@Riossdev</span>
+                <p className="text-gray-500">150,000 followers</p>
+              </div>
+            </a>
 
-          
+            <a href="#" className="flex justify-cente gap-4 mb-4 p-4 rounded hover:bg-[#292a30] transition-colors">
+              <div className="bg-[#1E1F24] p-4 text-xl rounded-lg text-purple-600">
+                <RiTwitterFill />
+              </div>
+              <div>
+                <span className="text-gray-300 font-semi">@Riossdev</span>
+                <p className="text-gray-500">150,000 followers</p>
+              </div>
+            </a>
+
+            <a href="#" className="flex justify-cente gap-4 mb-4 p-4 rounded hover:bg-[#292a30] transition-colors">
+              <div className="bg-[#1E1F24] p-4 text-xl rounded-lg text-purple-600">
+                <RiTwitchFill />
+              </div>
+              <div>
+                <span className="text-gray-300 font-semi">@Riossdev</span>
+                <p className="text-gray-500">150,000 followers</p>
+              </div>
+            </a>
+          </div>
         </section>
-        <section className=" col-span-2">3</section>
       </main>
     </div>
   );
